@@ -1,77 +1,128 @@
-import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  LockClosedIcon,
-} from "@heroicons/react/20/solid";
-
-const features = [
-  {
-    name: "Push to deploy",
-    description:
-      "Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.",
-    href: "#",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "SSL certificates",
-    description:
-      "Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.",
-    href: "#",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Simple queues",
-    description:
-      "Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-
 export default function Example() {
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">
-            Deploy faster
-          </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to deploy your app
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
-          </p>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              className="sm:w-16 sm:h-16 w-10 h-10"
+              viewBox="0 0 24 24"
+            >
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
+              Shooting Stars
+            </h2>
+            <p className="leading-relaxed text-base">
+              Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine.
+            </p>
+            <a className="mt-3 text-indigo-500 inline-flex items-center">
+              Learn More
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                className="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <feature.icon
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-none text-indigo-600"
-                  />
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{feature.description}</p>
-                  <p className="mt-6">
-                    <a
-                      href={feature.href}
-                      className="text-sm font-semibold leading-6 text-indigo-600"
-                    >
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
-                  </p>
-                </dd>
-              </div>
-            ))}
-          </dl>
+        <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
+              The Catalyzer
+            </h2>
+            <p className="leading-relaxed text-base">
+              Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine.
+            </p>
+            <a className="mt-3 text-indigo-500 inline-flex items-center">
+              Learn More
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                className="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              className="sm:w-16 sm:h-16 w-10 h-10"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+            </svg>
+          </div>
         </div>
+        <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+          <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              className="sm:w-16 sm:h-16 w-10 h-10"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
+              The 400 Blows
+            </h2>
+            <p className="leading-relaxed text-base">
+              Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine.
+            </p>
+            <a className="mt-3 text-indigo-500 inline-flex items-center">
+              Learn More
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                className="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <button className="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          Button
+        </button>
       </div>
-    </div>
+    </section>
   );
 }

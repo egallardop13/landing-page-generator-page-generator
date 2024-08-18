@@ -1,99 +1,138 @@
-import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  Cog6ToothIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
-
-const features = [
-  {
-    name: "Push to deploy.",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "SSL certificates.",
-    description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Simple queues.",
-    description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.",
-    icon: ArrowPathIcon,
-  },
-  {
-    name: "Advanced security.",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Powerful API.",
-    description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: Cog6ToothIcon,
-  },
-  {
-    name: "Database backups.",
-    description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ",
-    icon: ServerIcon,
-  },
-];
+import Image from "next/image";
 
 export default function Example() {
   return (
-    <div className="bg-gray-900 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-400">
-            Everything you need
-          </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            No server? No problem.
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-            impedit perferendis suscipit eaque, iste dolor cupiditate
-            blanditiis.
-          </p>
-        </div>
-      </div>
-      <div className="relative overflow-hidden pt-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            alt="App screenshot"
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-            width={2432}
-            height={1442}
-            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto flex flex-wrap">
+        <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+          <Image
+            alt="feature"
+            width={500}
+            height={450}
+            className="object-cover object-center h-full w-full"
+            src="/feature/featureImage1.jpg"
           />
-          <div aria-hidden="true" className="relative">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]" />
+        </div>
+        <div className="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+          <div className="flex flex-col mb-10 lg:items-start items-center">
+            <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+                Shooting Stars
+              </h2>
+              <p className="leading-relaxed text-base">
+                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+                taxidermy. Gastropub indxgo juice poutine.
+              </p>
+              <a className="mt-3 text-indigo-500 inline-flex items-center">
+                Learn More
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col mb-10 lg:items-start items-center">
+            <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+              </svg>
+            </div>
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+                The Catalyzer
+              </h2>
+              <p className="leading-relaxed text-base">
+                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+                taxidermy. Gastropub indxgo juice poutine.
+              </p>
+              <a className="mt-3 text-indigo-500 inline-flex items-center">
+                Learn More
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col mb-10 lg:items-start items-center">
+            <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+                Neptune
+              </h2>
+              <p className="leading-relaxed text-base">
+                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+                taxidermy. Gastropub indxgo juice poutine.
+              </p>
+              <a className="mt-3 text-indigo-500 inline-flex items-center">
+                Learn More
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
-        <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
-          {features.map((feature) => (
-            <div key={feature.name} className="relative pl-9">
-              <dt className="inline font-semibold text-white">
-                <feature.icon
-                  aria-hidden="true"
-                  className="absolute left-1 top-1 h-5 w-5 text-indigo-500"
-                />
-                {feature.name}
-              </dt>{" "}
-              <dd className="inline">{feature.description}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </div>
+    </section>
   );
 }
