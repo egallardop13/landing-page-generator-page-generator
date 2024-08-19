@@ -1,49 +1,45 @@
 export default function Example() {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900">
-      <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Boost your productivity.
-            <br />
-            Start using our app today.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-            Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
-            anim id veniam aliqua proident excepteur commodo do ea.
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-col text-center w-full mb-12">
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+            Master Cleanse Reliac Heirloom
+          </h1>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+            gentrify, subway tile poke farm-to-table. Franzen you probably
+            haven't heard of them man bun deep.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
-              className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Get started
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-white">
-              Learn more <span aria-hidden="true">→</span>
-            </a>
+        </div>
+        <div className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+          <div className="relative flex-grow w-full">
+            <label for="full-name" className="leading-7 text-sm text-gray-600">
+              Full Name
+            </label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
           </div>
+          <div className="relative flex-grow w-full">
+            <label for="email" className="leading-7 text-sm text-gray-600">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
+          </div>
+          <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            Button
+          </button>
         </div>
       </div>
-      <svg
-        viewBox="0 0 1024 1024"
-        aria-hidden="true"
-        className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
-      >
-        <circle
-          r={512}
-          cx={512}
-          cy={512}
-          fill="url(#8d958450-c69f-4251-94bc-4e091a323369)"
-          fillOpacity="0.7"
-        />
-        <defs>
-          <radialGradient id="8d958450-c69f-4251-94bc-4e091a323369">
-            <stop stopColor="#7775D6" />
-            <stop offset={1} stopColor="#E935C1" />
-          </radialGradient>
-        </defs>
-      </svg>
-    </div>
+    </section>
   );
 }

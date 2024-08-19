@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { useRouter } from "next/router";
 import {
+  navbarComponents,
   heroComponents,
   logoCloudComponents,
   featureComponents,
@@ -74,6 +75,9 @@ const Page = () => {
     const randomHeroIdx = Math.floor(
       Math.random() * components.heroComponents.length
     );
+    const randomNavbarIdx = Math.floor(
+      Math.random() * components.navbarComponents.length
+    );
     const randomLogoCloudIdx = Math.floor(
       Math.random() * components.logoCloudComponents.length
     );
@@ -92,7 +96,7 @@ const Page = () => {
 
     if (preview) {
       setCustomUrl(
-        `hero-${randomHeroIdx}-logocloud-${randomLogoCloudIdx}-feature-${randomFeatureIdx}-stats-${randomStatsIdx}-cta-${randomCTAIdx}-footer-${randomFooterIdx}`
+        `nav-${randomNavbarIdx}-hero-${randomHeroIdx}-logocloud-${randomLogoCloudIdx}-feature-${randomFeatureIdx}-stats-${randomStatsIdx}-cta-${randomCTAIdx}-footer-${randomFooterIdx}`
       );
       return;
     }

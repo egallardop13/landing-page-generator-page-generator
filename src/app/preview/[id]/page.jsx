@@ -12,6 +12,7 @@ const PreviewPage = ({ params }) => {
   }
 
   const componentMap = {
+    navbar: components.navbarComponents,
     hero: components.heroComponents,
     logocloud: components.logoCloudComponents,
     feature: components.featureComponents,

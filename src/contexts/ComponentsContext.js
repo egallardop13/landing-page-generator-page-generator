@@ -1,5 +1,8 @@
 "use client";
-import { dynamicallyImportComponents } from "@/utils/dynamicImports";
+import {
+  dynamicallyImportComponents,
+  navbarComponents,
+} from "@/utils/dynamicImports";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ComponentsContext = createContext();
@@ -14,6 +17,7 @@ export const ComponentsProvider = ({ children }) => {
     if (components) return components; // If already seeded, return existing components
 
     const seededComponents = {
+      navbarComponents: [],
       heroComponents: [],
       logoCloudComponents: [],
       featureComponents: [],
@@ -29,6 +33,10 @@ export const ComponentsProvider = ({ children }) => {
     isSeeding = true;
     console.log("Seeding components...");
     try {
+      await dynamicallyImportComponents(
+        "navbars/Nav",
+        seededComponents.navbarComponents
+      );
       await dynamicallyImportComponents(
         "heroSections/Hero",
         seededComponents.heroComponents

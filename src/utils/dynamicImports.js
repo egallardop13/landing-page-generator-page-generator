@@ -1,3 +1,4 @@
+export const navbarComponents = [];
 export const heroComponents = [];
 export const ctaComponents = [];
 export const featureComponents = [];
@@ -35,6 +36,7 @@ export async function seedComponents() {
   isSeeding = true;
   console.log("Seeding components...");
   try {
+    await dynamicallyImportComponents("navbars/Nav", navbarComponents);
     await dynamicallyImportComponents("heroSections/Hero", heroComponents);
     await dynamicallyImportComponents("ctaSections/CtaSection", ctaComponents);
     await dynamicallyImportComponents(
@@ -54,7 +56,7 @@ export async function seedComponents() {
     isSeeding = false;
   }
 }
-
+console.log("navbars:", navbarComponents);
 console.log("heros:", heroComponents);
 console.log("stats:", statsComponents);
 console.log("footers:", footerComponents);
