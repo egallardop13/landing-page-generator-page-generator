@@ -12,7 +12,7 @@ const Nav3 = () => {
           <a className="hover:text-gray-900">Fourth Link</a>
         </nav>
         <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-          <RocketLaunchIcon class="h-20 w-20 text-slate-700 " />
+          <RocketLaunchIcon className="h-20 w-20 text-slate-700 " />
 
           <span className="ml-3 text-xl">Your Company</span>
         </a>
