@@ -1,27 +1,34 @@
-const stats = [
-  { id: 1, name: "Transactions every 24 hours", value: "44 million" },
-  { id: 2, name: "Assets under holding", value: "$119 trillion" },
-  { id: 3, name: "New users annually", value: "46,000" },
-];
-
 export default function Example() {
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-          {stats.map((stat) => (
-            <div
-              key={stat.id}
-              className="mx-auto flex max-w-xs flex-col gap-y-4"
-            >
-              <dt className="text-base leading-7 text-gray-600">{stat.name}</dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -m-4 text-center">
+          <div className="p-4 sm:w-1/4 w-1/2">
+            <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+              2.7K
+            </h2>
+            <p className="leading-relaxed">Users</p>
+          </div>
+          <div className="p-4 sm:w-1/4 w-1/2">
+            <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+              1.8K
+            </h2>
+            <p className="leading-relaxed">Subscribes</p>
+          </div>
+          <div className="p-4 sm:w-1/4 w-1/2">
+            <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+              35
+            </h2>
+            <p className="leading-relaxed">Downloads</p>
+          </div>
+          <div className="p-4 sm:w-1/4 w-1/2">
+            <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+              4
+            </h2>
+            <p className="leading-relaxed">Products</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

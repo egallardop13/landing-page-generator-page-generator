@@ -1,27 +1,52 @@
-const stats = [
-  { id: 1, name: "Transactions every 24 hours", value: "44 million" },
-  { id: 2, name: "Assets under holding", value: "$119 trillion" },
-  { id: 3, name: "New users annually", value: "46,000" },
-];
+import Image from "next/image";
 
 export default function Example() {
   return (
-    <div className="bg-gray-900 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-          {stats.map((stat) => (
-            <div
-              key={stat.id}
-              className="mx-auto flex max-w-xs flex-col gap-y-4"
-            >
-              <dt className="text-base leading-7 text-gray-400">{stat.name}</dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                {stat.value}
-              </dd>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto flex flex-wrap">
+        <div className="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
+          <div className="w-full sm:p-4 px-4 mb-6">
+            <h1 className="title-font font-medium text-xl mb-2 text-gray-900">
+              Moon hashtag pop-up try-hard offal truffaut
+            </h1>
+            <div className="leading-relaxed">
+              Pour-over craft beer pug drinking vinegar live-edge gastropub,
+              keytar neutra sustainable fingerstache kickstarter.
             </div>
-          ))}
-        </dl>
+          </div>
+          <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 className="title-font font-medium text-3xl text-gray-900">
+              2.7K
+            </h2>
+            <p className="leading-relaxed">Users</p>
+          </div>
+          <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 className="title-font font-medium text-3xl text-gray-900">
+              1.8K
+            </h2>
+            <p className="leading-relaxed">Subscribes</p>
+          </div>
+          <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 className="title-font font-medium text-3xl text-gray-900">
+              35
+            </h2>
+            <p className="leading-relaxed">Downloads</p>
+          </div>
+          <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 className="title-font font-medium text-3xl text-gray-900">4</h2>
+            <p className="leading-relaxed">Products</p>
+          </div>
+        </div>
+        <div className="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
+          <Image
+            className="object-cover object-center w-full h-full"
+            width={600}
+            height={300}
+            src="/stats/statsImage1.jpg"
+            alt="stats"
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
