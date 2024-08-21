@@ -1,4 +1,5 @@
 import { Avatar } from "@/components/ui/avatar";
+import { BookmarkIcon } from "@heroicons/react/16/solid";
 import {
   Dropdown,
   DropdownButton,
@@ -28,36 +29,36 @@ import { InboxIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 
 const navItems = [
   { label: "Home", url: "/" },
-  { label: "Events", url: "/events" },
-  { label: "Orders", url: "/orders" },
-  { label: "Broadcasts", url: "/broadcasts" },
-  { label: "Settings", url: "/settings" },
+  {
+    label: "Sample 1",
+    url: "/preview/hero-3-logocloud-2-feature-13-stats-0-cta-9-footer-5",
+  },
+  {
+    label: "Sample 2",
+    url: "/preview/hero-11-logocloud-8-feature-12-stats-4-cta-10-footer-5",
+  },
+  {
+    label: "Sample 3",
+    url: "/preview/hero-1-logocloud-11-feature-14-stats-9-cta-10-footer-1",
+  },
 ];
 
 function TeamDropdownMenu() {
   return (
     <DropdownMenu className="min-w-80 lg:min-w-64" anchor="bottom start">
-      <DropdownItem href="/teams/1/settings">
-        <Cog8ToothIcon />
-        <DropdownLabel>Settings</DropdownLabel>
-      </DropdownItem>
-      <DropdownDivider />
       <DropdownItem href="/teams/1">
-        <Avatar slot="icon" src="/tailwind-logo.svg" />
+        <Avatar slot="icon" initials="P1" className="bg-zinc-950 text-white" />
+
         <DropdownLabel>Landing Page Generator</DropdownLabel>
       </DropdownItem>
       <DropdownItem href="/teams/2">
-        <Avatar
-          slot="icon"
-          initials="WC"
-          className="bg-purple-500 text-white"
-        />
+        <Avatar slot="icon" initials="WC" className="bg-zinc-950 text-white" />
         <DropdownLabel>Workcation</DropdownLabel>
       </DropdownItem>
       <DropdownDivider />
       <DropdownItem href="/teams/create">
         <PlusIcon />
-        <DropdownLabel>New team&hellip;</DropdownLabel>
+        <DropdownLabel>New Page&hellip;</DropdownLabel>
       </DropdownItem>
     </DropdownMenu>
   );
@@ -68,7 +69,8 @@ const RootNavbar = () => {
     <Navbar>
       <Dropdown>
         <DropdownButton as={NavbarItem} className="max-lg:hidden">
-          <Avatar src="/tailwind-logo.svg" />
+          {/* <Avatar src={BookmarkIcon} /> */}
+          <BookmarkIcon />
           <NavbarLabel>Saved Pages</NavbarLabel>
           <ChevronDownIcon />
         </DropdownButton>
@@ -77,13 +79,13 @@ const RootNavbar = () => {
       <NavbarDivider className="max-lg:hidden" />
       <NavbarSection className="max-lg:hidden">
         {navItems.map(({ label, url }) => (
-          <NavbarItem key={label} href={url}>
+          <NavbarItem key={label} href={url} target="_blank">
             {label}
           </NavbarItem>
         ))}
       </NavbarSection>
       <NavbarSpacer />
-      <NavbarSection>
+      {/* <NavbarSection>
         <NavbarItem href="/search" aria-label="Search">
           <MagnifyingGlassIcon />
         </NavbarItem>
@@ -119,7 +121,7 @@ const RootNavbar = () => {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-      </NavbarSection>
+      </NavbarSection> */}
     </Navbar>
   );
 };

@@ -31,6 +31,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { StackedLayout } from "@/components/ui/stacked-layout";
 import RootNavbar from "@/components/RootNavbar";
 import RootSidebar from "@/components/RootSidebar";
+import { Text } from "@/components/ui/text";
 const Page = () => {
   // const [isLoading, setIsLoading] = useState(true);
   const { components } = useComponentsContext();
@@ -151,8 +152,49 @@ const Page = () => {
       sidebar={<RootSidebar />}
       className="dark"
     >
-      <div className="  grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 place-items-center pt-32">
-        <div className="lg:w-96 col-span-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 place-items-center pt-10">
+        <div className="col-span-2 space-y-4">
+          <div>
+            <Heading>Welcome</Heading>
+            <Text>
+              Create a custom landing page in seconds with our easy-to-use
+              generator.
+            </Text>
+          </div>
+          <div>
+            <Heading>Description</Heading>
+            <Text>
+              Leverage the power of dynamic routing in Next.js to create unique
+              landing pages. Select from various premade components—hero
+              sections, feature showcases, CTAs, and more—and combine them using
+              our generator. Instantly preview your design, adjust it for
+              different screen sizes, and explore live examples for inspiration.
+            </Text>
+          </div>
+          <div>
+            <Heading className="">How to use</Heading>
+            <ol className="list-decimal list-inside  marker:text-base/6 marker:text-zinc-500 marker:sm:text-sm/6 marker:dark:text-zinc-400">
+              <li className="text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">
+                Choose components from the list on the right.
+              </li>
+              <li className="text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">
+                Enter the corresponding code in the format: componentname-idx.
+              </li>
+              <li className="text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">
+                Example: hero-1-logocloud-4-feature-15-stats-0-cta-0-footer-8.
+              </li>
+              <li className="text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">
+                Use the iframe to preview your page, resize it for different
+                devices, or click "Live View" to open it in a new tab.
+              </li>
+              <li className="text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">
+                Visit "Sample 1," "Sample 2," or "Sample 3" from the navbar for
+                ideas on what you can create.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div className="lg:w-96 col-span-3 mt-10">
           <Subheading className="flex flex-col ">
             Components
             <span className="text-xs">format: componentname-idx</span>
@@ -196,7 +238,7 @@ const Page = () => {
             <DescriptionDetails>10 components</DescriptionDetails>
           </DescriptionList>
         </div>
-        <div className="gap-y-3 col-span-3 flex flex-col items-center lg:min-w-[600px] ">
+        {/* <div className="gap-y-3 col-span-3 flex flex-col items-center lg:min-w-[600px] ">
           <Heading>Landing Page Generator</Heading>
           <Button onClick={() => loadComponents(false)}>Generate Page</Button>
           <Link
@@ -206,7 +248,7 @@ const Page = () => {
           >
             {url}
           </Link>
-        </div>
+        </div> */}
 
         {/* place-items-center h-screen */}
         {/* min w 91vw prevents resizing frame from shifting layout */}
@@ -237,15 +279,35 @@ const Page = () => {
                   Desktop
                 </Button>
               </div>
-              <Button
-                className="mt-4  self-center"
-                onClick={() => {
-                  loadComponents(true);
-                  console.log("customUrl: ", customUrl);
-                }}
-              >
-                Generate Page
-              </Button>
+              <div className="flex self-center flex-wrap justify-center gap-x-3 mt-2">
+                <Button
+                  className="mt-4 "
+                  outline
+                  onClick={() => {
+                    loadComponents(true);
+                    console.log("customUrl: ", customUrl);
+                  }}
+                >
+                  Generate Page
+                </Button>
+                {customUrl === "" ? (
+                  <Button className="mt-4 " outline disabled target="_blank">
+                    Live View
+                  </Button>
+                ) : (
+                  <Button
+                    className="mt-4 "
+                    outline
+                    href={`/preview/${customUrl}`}
+                    target="_blank"
+                  >
+                    Live View
+                  </Button>
+                )}
+                <Button className="mt-4 " outline disabled>
+                  Save Page
+                </Button>
+              </div>
             </Field>
           </div>
           <div
