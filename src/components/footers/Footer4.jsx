@@ -2,7 +2,7 @@ import { RocketLaunchIcon } from "@heroicons/react/24/solid";
 
 export default function Example() {
   return (
-    <footer className="text-gray-600 body-font">
+    <footer className="text-gray-600 body-font bg-white">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <RocketLaunchIcon class="h-20 w-20 text-slate-700 " />

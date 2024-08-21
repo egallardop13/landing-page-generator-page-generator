@@ -63,6 +63,8 @@ const navigation = [
 ];
 
 export default function Example() {
+  let currentDate = new Date();
+
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
@@ -80,7 +82,8 @@ export default function Example() {
         </div>
         <div className="mt-8 md:order-1 md:mt-0">
           <p className="text-center text-xs leading-5 text-gray-500">
-            &copy; 2020 Your Company, Inc. All rights reserved.
+            &copy; {currentDate.getFullYear()} Your Company, Inc. All rights
+            reserved.
           </p>
         </div>
       </div>

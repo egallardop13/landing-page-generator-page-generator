@@ -5,7 +5,13 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "selector",
   theme: {
+    extend: {
+      screens: {
+        "3xl": "1760px",
+      },
+    },
     aspectRatio: {
       auto: "auto",
       square: "1 / 1",

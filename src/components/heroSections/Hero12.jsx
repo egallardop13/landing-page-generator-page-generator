@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { RocketLaunchIcon } from "@heroicons/react/16/solid";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -24,11 +25,7 @@ export default function Hero12() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
+              <RocketLaunchIcon class="h-16 w-16 text-slate-700 " />
             </a>
           </div>
           <div className="flex lg:hidden">

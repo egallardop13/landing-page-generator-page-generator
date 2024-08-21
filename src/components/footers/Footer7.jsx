@@ -1,3 +1,5 @@
+import { RocketLaunchIcon } from "@heroicons/react/16/solid";
+
 /*
   This example requires some changes to your config:
   
@@ -103,6 +105,8 @@ const navigation = {
 };
 
 export default function Example() {
+  let currentDate = new Date();
+
   return (
     <footer aria-labelledby="footer-heading" className="bg-gray-900">
       <h2 id="footer-heading" className="sr-only">
@@ -110,11 +114,8 @@ export default function Example() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <img
-            alt="Company name"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            className="h-7"
-          />
+          <RocketLaunchIcon class="h-20 w-20 text-slate-700 " />
+
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
@@ -237,7 +238,8 @@ export default function Example() {
             ))}
           </div>
           <p className="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">
-            &copy; 2020 Your Company, Inc. All rights reserved.
+            &copy; {currentDate.getFullYear()} Your Company, Inc. All rights
+            reserved.
           </p>
         </div>
       </div>
