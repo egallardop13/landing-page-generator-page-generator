@@ -1,19 +1,5 @@
 import { RocketLaunchIcon } from "@heroicons/react/16/solid";
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 const navigation = {
   solutions: [
     { name: "Marketing", href: "#" },

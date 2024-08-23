@@ -60,7 +60,7 @@ const Page = () => {
     }
   };
 
-  const [iframeWidth, setIframeWidth] = useState(calculateWidth()); // Default width
+  const [iframeWidth, setIframeWidth] = useState(350); // Default width
   const resizerRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false); // Tracks window resize
   const [isManualResize, setIsManualResize] = useState(false); // Track iframe resizing

@@ -1,8 +1,5 @@
 "use client";
-import {
-  dynamicallyImportComponents,
-  navbarComponents,
-} from "@/utils/dynamicImports";
+import { dynamicallyImportComponents } from "@/utils/dynamicImports";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ComponentsContext = createContext();
@@ -67,13 +64,6 @@ export const ComponentsProvider = ({ children }) => {
     } finally {
       isSeeding = false;
     }
-
-    // await dynamicallyImportComponents("heroSections/Hero", seededComponents.heroComponents);
-    // await dynamicallyImportComponents("ctaSections/CtaSection", seededComponents.ctaComponents);
-    // await dynamicallyImportComponents("featureSections/FeatureSection", seededComponents.featureComponents);
-    // await dynamicallyImportComponents("footers/Footer", seededComponents.footerComponents);
-    // await dynamicallyImportComponents("logoClouds/LogoCloud", seededComponents.logoCloudComponents);
-    // await dynamicallyImportComponents("stats/Stats", seededComponents.statsComponents);
 
     setComponents(seededComponents);
     return seededComponents;

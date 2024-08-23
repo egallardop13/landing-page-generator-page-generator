@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 const navigation = [
@@ -13,8 +11,6 @@ const navigation = [
 ];
 
 export default function Hero1() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <section className="text-gray-400 bg-gradient-to-bl from-blue-200 to-slate-800 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
