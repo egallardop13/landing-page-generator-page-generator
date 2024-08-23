@@ -37,7 +37,7 @@ const PreviewPage = ({ params }) => {
   }
 
   return (
-    <div className="no-scrollbar">
+    <div className="no-scrollbar bg-white">
       {componentsToRender.map((Component, idx) => (
         <div key={idx}>
           <Component />
