@@ -5,22 +5,11 @@ import {
   DevicePhoneMobileIcon,
   DeviceTabletIcon,
   ComputerDesktopIcon,
+  ArrowDownTrayIcon,
 } from "@heroicons/react/16/solid";
-import { useRouter } from "next/router";
-import {
-  heroComponents,
-  logoCloudComponents,
-  featureComponents,
-  statsComponents,
-  ctaComponents,
-  footerComponents,
-  seedComponents,
-} from "../utils/dynamicImports";
-import { Link } from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 import { Heading, Subheading } from "@/components/ui/heading";
 import { useComponentsContext } from "@/contexts/ComponentsContext";
-import Container from "@/components/ui/Container";
 import {
   DescriptionDetails,
   DescriptionList,
@@ -32,16 +21,14 @@ import { StackedLayout } from "@/components/ui/stacked-layout";
 import RootNavbar from "@/components/RootNavbar";
 import RootSidebar from "@/components/RootSidebar";
 import { Text } from "@/components/ui/text";
+import { useSavedPagesContext } from "@/contexts/SavedPagesContext";
+
 const Page = () => {
-  // const [isLoading, setIsLoading] = useState(true);
   const { components } = useComponentsContext();
   const [url, setUrl] = useState("/");
   const [customUrl, setCustomUrl] = useState("");
 
-  // let vw = Math.max(
-  //   document.documentElement.clientWidth || 0,
-  //   window.innerWidth || 0
-  // );
+  // Function to calculate the iframe width based on the current viewport width
   const calculateWidth = () => {
     if (typeof window !== "undefined") {
       const vw = Math.max(
@@ -60,12 +47,11 @@ const Page = () => {
     }
   };
 
-  const [iframeWidth, setIframeWidth] = useState(350); // Default width
+  const [iframeWidth, setIframeWidth] = useState(360); // Default width
   const resizerRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false); // Tracks window resize
   const [isManualResize, setIsManualResize] = useState(false); // Track iframe resizing
-
-  // Function to calculate the iframe width based on the current viewport width
+  const { savePage } = useSavedPagesContext();
 
   useEffect(() => {
     const handleResize = () => {
@@ -144,6 +130,10 @@ const Page = () => {
       `/preview/hero-${randomHeroIdx}-logocloud-${randomLogoCloudIdx}-feature-${randomFeatureIdx}-stats-${randomStatsIdx}-cta-${randomCTAIdx}-footer-${randomFooterIdx}`
     );
     console.log("Generated URL:", url);
+  };
+
+  const handleSavePage = () => {
+    savePage(customUrl);
   };
 
   return (
@@ -238,23 +228,10 @@ const Page = () => {
             <DescriptionDetails>10 components</DescriptionDetails>
           </DescriptionList>
         </div>
-        {/* <div className="gap-y-3 col-span-3 flex flex-col items-center lg:min-w-[600px] ">
-          <Heading>Landing Page Generator</Heading>
-          <Button onClick={() => loadComponents(false)}>Generate Page</Button>
-          <Link
-            href={url}
-            className="text-blue-500 underline hover:text-blue-800"
-            target="_blank"
-          >
-            {url}
-          </Link>
-        </div> */}
-
-        {/* place-items-center h-screen */}
-        {/* min w 91vw prevents resizing frame from shifting layout */}
-        {/* border border-red-500 */}
-        <div className="flex min-w-full  overflow-x-hidden col-span-1 sm:col-span-3 lg:col-span-5 flex-wrap justify-center py-32  no-scrollbar sm:min-w-[91vw] 2xl:min-w-[94vw]">
-          {/* border border-blue-500 */}
+        <div
+          className="flex min-w-full   overflow-x-hidden col-span-1 sm:col-span-3 lg:col-span-5 flex-wrap justify-center py-32  no-scrollbar sm:min-w-[91vw] 2xl:min-w-[94vw]"
+          id="create-page"
+        >
           <div className=" flex p-10 justify-center ">
             <Field className=" flex flex-col max-w-xs sm:max-w-sm ">
               <Label>Create a custom page</Label>
@@ -262,7 +239,7 @@ const Page = () => {
                 name="description"
                 className=" sm:w-96 rounded-lg h-40 text-gray-700 text-sm"
                 placeholder="hero-10-logocloud-4-feature-3-stats-4-feature-8-cta-9-footer-3"
-                onChange={(e) => setCustomUrl(e.target.value)}
+                onChange={(e) => setCustomUrl(e.target.value.toLowerCase())}
                 value={customUrl}
               />
               <div className="flex self-center gap-x-3 mt-2">
@@ -291,37 +268,55 @@ const Page = () => {
                   Generate Page
                 </Button>
                 {customUrl === "" ? (
-                  <Button className="mt-4 " outline disabled target="_blank">
-                    Live View
-                  </Button>
+                  <>
+                    <Button className="mt-4 " outline disabled target="_blank">
+                      Live View
+                    </Button>
+                    <Button className="mt-4 " outline disabled>
+                      Save Page
+                    </Button>
+                    <Button className="max-h-9 self-end" outline disabled>
+                      <ArrowDownTrayIcon className="" />
+                    </Button>
+                  </>
                 ) : (
-                  <Button
-                    className="mt-4 "
-                    outline
-                    href={`/preview/${customUrl}`}
-                    target="_blank"
-                  >
-                    Live View
-                  </Button>
+                  <>
+                    <Button
+                      className="mt-4 "
+                      outline
+                      href={`/preview/${customUrl}`}
+                      target="_blank"
+                    >
+                      Live View
+                    </Button>
+                    <Button
+                      className="mt-4 "
+                      outline
+                      onClick={() => handleSavePage(customUrl)}
+                    >
+                      Save Page
+                    </Button>
+                    <Button className="max-h-9 self-end" outline>
+                      <ArrowDownTrayIcon className="" />
+                    </Button>
+                  </>
                 )}
-                <Button className="mt-4 " outline disabled>
-                  Save Page
-                </Button>
               </div>
             </Field>
           </div>
           <div
             className={
-              // border border-orange-500
-              // border border-green-500
-              iframeWidth < 1095 ? " flex-1 " : " mx-auto 3xl:flex-1"
+              iframeWidth === 360
+                ? "mx-auto sm:flex-1"
+                : iframeWidth < 979
+                ? " mx-auto sm:flex-1 "
+                : " mx-auto 3xl:flex-1"
             }
           >
             {console.log("iframeWidth: ", iframeWidth)}
             <div className=" relative " style={{ width: `${iframeWidth}px` }}>
               <iframe
                 src={`/preview/${customUrl}`}
-                // src="https://tailwindcss.com/docs/screens"
                 className="w-full h-[90vh] rounded-lg ring-1 no-scrollbar ring-slate-900/10"
                 title="Live Preview"
                 loading="lazy"

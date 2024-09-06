@@ -4,7 +4,6 @@ import {
   Sidebar,
   SidebarBody,
   SidebarHeader,
-  SidebarHeading,
   SidebarItem,
   SidebarLabel,
   SidebarSection,
@@ -33,14 +32,13 @@ const RootSidebar = () => {
     <Sidebar>
       <SidebarHeader>
         <Dropdown>
-          <DropdownButton as={SidebarItem} disabled className="lg:mb-2.5">
+          <DropdownButton as={SidebarItem} className="lg:mb-2.5">
             <BookmarkIcon />
             <SidebarLabel>Saved Pages</SidebarLabel>
             <ChevronDownIcon />
           </DropdownButton>
           <SavedPagesDropdown />
         </Dropdown>
-        <SidebarHeading>COMING SOON!</SidebarHeading>
       </SidebarHeader>
       <SidebarBody>
         <SidebarSection>

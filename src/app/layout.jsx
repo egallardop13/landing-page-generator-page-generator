@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ComponentsProvider } from "@/contexts/ComponentsContext";
+import { SavedPagesProvider } from "@/contexts/SavedPagesContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
       className="dark bg-white lg:bg-zinc-100 dark:bg-zinc-900 dark:lg:bg-zinc-950 dark:text-white"
     >
       <body className={inter.className}>
-        <ComponentsProvider>{children}</ComponentsProvider>
+        <ComponentsProvider>
+          <SavedPagesProvider>{children}</SavedPagesProvider>
+        </ComponentsProvider>
       </body>
     </html>
   );

@@ -32,7 +32,7 @@ const RootNavbar = () => {
   return (
     <Navbar>
       <Dropdown>
-        <DropdownButton as={NavbarItem} disabled className="max-lg:hidden">
+        <DropdownButton as={NavbarItem} className="max-lg:hidden">
           <BookmarkIcon />
           <NavbarLabel>Saved Pages</NavbarLabel>
           <ChevronDownIcon />
