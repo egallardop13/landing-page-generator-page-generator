@@ -173,7 +173,8 @@ const Page = () => {
                 Enter the corresponding code in the format: componentname-idx.
               </li>
               <li className="text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">
-                Example: hero-1-logocloud-4-feature-15-stats-0-cta-0-footer-8.
+                Example:
+                nav-1-hero-1-logocloud-4-feature-15-stats-0-cta-0-footer-8.
               </li>
               <li className="text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400">
                 Use the iframe to preview your page, resize it for different
