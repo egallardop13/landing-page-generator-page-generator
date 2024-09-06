@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { RocketLaunchIcon } from "@heroicons/react/24/solid";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -11,7 +12,7 @@ const navigation = [
   { name: "Company", href: "#" },
 ];
 
-export default function Nav6() {
+export default function Nav5() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -23,11 +24,7 @@ export default function Nav6() {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              alt=""
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
-            />
+            <RocketLaunchIcon className="h-20 w-20 text-slate-700 " />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -67,11 +64,7 @@ export default function Nav6() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
+              <RocketLaunchIcon className="h-20 w-20 text-slate-700 " />
             </a>
             <button
               type="button"

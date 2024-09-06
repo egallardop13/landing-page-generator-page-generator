@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className="dark bg-white lg:bg-zinc-100 dark:bg-zinc-900 dark:lg:bg-zinc-950 dark:text-white"
+      className="h-full dark bg-white lg:bg-zinc-100 dark:bg-zinc-900 dark:lg:bg-zinc-950 dark:text-white"
     >
-      <body className={inter.className}>
+      <body className={`${inter.className} h-full`}>
         <ComponentsProvider>
           <SavedPagesProvider>{children}</SavedPagesProvider>
         </ComponentsProvider>

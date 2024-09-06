@@ -14,13 +14,13 @@ export const ComponentsProvider = ({ children }) => {
     if (components) return components; // If already seeded, return existing components
 
     const seededComponents = {
-      navbarComponents: [],
       heroComponents: [],
       logoCloudComponents: [],
       featureComponents: [],
       statsComponents: [],
       ctaComponents: [],
       footerComponents: [],
+      navComponents: [],
     };
 
     if (isSeeding) {
@@ -30,10 +30,6 @@ export const ComponentsProvider = ({ children }) => {
     isSeeding = true;
     console.log("Seeding components...");
     try {
-      await dynamicallyImportComponents(
-        "navbars/Nav",
-        seededComponents.navbarComponents
-      );
       await dynamicallyImportComponents(
         "heroSections/Hero",
         seededComponents.heroComponents
@@ -58,12 +54,24 @@ export const ComponentsProvider = ({ children }) => {
         "stats/Stats",
         seededComponents.statsComponents
       );
+
+      await dynamicallyImportComponents(
+        "navbars/Nav",
+        seededComponents.navComponents
+      );
       console.log("Finished seeding components.");
     } catch (e) {
       console.warn("Failed to seed components. Error: ", e);
     } finally {
       isSeeding = false;
     }
+
+    // await dynamicallyImportComponents("heroSections/Hero", seededComponents.heroComponents);
+    // await dynamicallyImportComponents("ctaSections/CtaSection", seededComponents.ctaComponents);
+    // await dynamicallyImportComponents("featureSections/FeatureSection", seededComponents.featureComponents);
+    // await dynamicallyImportComponents("footers/Footer", seededComponents.footerComponents);
+    // await dynamicallyImportComponents("logoClouds/LogoCloud", seededComponents.logoCloudComponents);
+    // await dynamicallyImportComponents("stats/Stats", seededComponents.statsComponents);
 
     setComponents(seededComponents);
     return seededComponents;

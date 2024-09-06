@@ -6,10 +6,10 @@ const Nav3 = () => {
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-          <a className="mr-5 hover:text-gray-900">First Link</a>
-          <a className="mr-5 hover:text-gray-900">Second Link</a>
-          <a className="mr-5 hover:text-gray-900">Third Link</a>
-          <a className="hover:text-gray-900">Fourth Link</a>
+          <a className="mr-5 hover:text-gray-900">Link 1</a>
+          <a className="mr-5 hover:text-gray-900">Link 2</a>
+          <a className="mr-5 hover:text-gray-900">Link 3</a>
+          <a className="hover:text-gray-900">Link 4</a>
         </nav>
         <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
           <RocketLaunchIcon className="h-20 w-20 text-slate-700 " />

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useComponentsContext } from "@/contexts/ComponentsContext";
+import { notFound } from "next/navigation";
 
 const PreviewPage = ({ params }) => {
   const { id } = params;
@@ -12,7 +13,7 @@ const PreviewPage = ({ params }) => {
   }
 
   const componentMap = {
-    navbar: components.navbarComponents,
+    nav: components.navComponents,
     hero: components.heroComponents,
     logocloud: components.logoCloudComponents,
     feature: components.featureComponents,
@@ -34,6 +35,10 @@ const PreviewPage = ({ params }) => {
     } else {
       console.warn(`Component ${name} with index ${index} not found.`);
     }
+  }
+
+  if (componentsToRender.length === 0) {
+    notFound();
   }
 
   return (

@@ -28,6 +28,8 @@ const Page = () => {
   const [url, setUrl] = useState("/");
   const [customUrl, setCustomUrl] = useState("");
 
+  console.log("components: ", components);
+
   // Function to calculate the iframe width based on the current viewport width
   const calculateWidth = () => {
     if (typeof window !== "undefined") {
@@ -191,6 +193,12 @@ const Page = () => {
             <span className="text-xs">idx starts at 0</span>
           </Subheading>
           <DescriptionList className="mt-4">
+            <DescriptionTerm className="flex flex-col">
+              NavBar Sections
+              <span className="-mt-1 text-xs">code: nav-idx</span>
+            </DescriptionTerm>
+            <DescriptionDetails>5 components</DescriptionDetails>
+
             <DescriptionTerm className="flex flex-col">
               Hero Sections
               <span className="-mt-1 text-xs">code: hero-idx</span>
